@@ -1,0 +1,70 @@
+:root {
+    --speed: 0;
+}
+body {
+    margin: 15%;
+}
+.machine {
+  background-color: peru;
+  border: dashed brown 3px;
+  height: 300px;
+  width: 900px;
+  margin: 50px;
+
+  z-index: 5;
+  display: flex;
+}
+
+.slot {
+  height: 250px;
+  width: 250px;
+  margin: 20px;
+  overflow: hidden;
+  z-index: 1;
+  background-color: beige;
+  border: solid darkblue 2px;
+  text-align: center;
+  font-size: 100pt;
+  line-height: 250px;
+}
+#inpSpeed { 
+    font-size: 30px;
+    margin-left: 30px;
+    width: 60px;
+    background-color: yellowgreen;
+}
+label {
+    display: inline-block;
+    font-size: 20pt;
+    margin-left: 15%;
+}
+.ButtonInput {
+    display: inline-flex;
+}
+#stopButton{
+    margin-left: 50px;
+    background-color: red;
+    font-size: 25pt;
+    box-shadow: 2px 2px black;
+}
+#SpinButton{
+    margin-left: 400px;
+    background-color: green;
+    font-size: 25pt;
+    box-shadow: 2px 2px black;
+}
+.slot > .value {
+  z-index: 3;
+  animation-name: slotspin;
+  animation-iteration-count: infinite;
+  animation-duration: calc(1s/var(--speed)) ;
+}
+
+@keyframes slotspin {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(200px);
+  }
+}
